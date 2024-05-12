@@ -18,15 +18,37 @@
 package main
 
 import (
-	"fmt"
 	"log"
+    "html/template"
 	"net/http"
 	"os"
 )
 
+type ContactDetails struct {
+	Success bool
+    Name    string
+    State   string
+    Message string
+}
+
 func main() {
 	log.Print("starting server...")
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		tmpl := template.Must(template.ParseFiles("index.html"))
+		if r.Method != http.MethodPost {
+			tmpl.Execute(w, nil)
+			return
+		}
+		details := ContactDetails{
+			Success: true,
+			Name:   r.FormValue("name"),
+			State: r.FormValue("state"),
+			Message: r.FormValue("message"),
+		}
+		tmpl.Execute(w, details)
+	})
+
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./static"))))
 
 	// Determine port for HTTP service.
 	port := os.Getenv("PORT")
@@ -34,20 +56,9 @@ func main() {
 		port = "8080"
 		log.Printf("defaulting to port %s", port)
 	}
-
 	// Start HTTP server.
 	log.Printf("listening on port %s", port)
 	if err := http.ListenAndServe(":"+port, nil); err != nil {
 		log.Fatal(err)
 	}
 }
-
-func handler(w http.ResponseWriter, r *http.Request) {
-	name := os.Getenv("NAME")
-	if name == "" {
-		name = "World"
-	}
-	fmt.Fprintf(w, "Hello %s!\n", name)
-}
-
-// [END cloudrun_helloworld_service]

@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    justify-content: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#container {
+    width: 100%;
+    text-align: center;
+}
+
+#banner {
+    padding: 1px 0 1px 0;
+    background-color: rgb(51, 51, 95);
+    color:antiquewhite
+}
+
+#banner p { 
+    font-size:20px;
+}
+
+#banner a {
+    color:antiquewhite;
+}
