@@ -1,23 +1,28 @@
-# ABWork - The work can't stop.
+# GoLang Project
 
-## Project portfolio
+Competências comprovadas neste projeto:
 
-Technologies of this project:
+- IaC (Docker);
+- Golang; HTML; CSS;
+- Google Cloud Run
 
-- IaC
-- Terraform
-- GCP
+## Demonstração
 
+**Com docker**
 
-changelog
-read-me
+> Instruções
+$ cd ~
+$ git clone https://github.com/italo2sanfer/abwork
+$ cd ~/abwork/golang1/
+$ docker build -f DockerfileDemo -t abwork-golang1:v1 .
+$ docker run --rm -p 8080:8080 abwork-golang1:v1
 
+Acesse http://localhost:8080/
 
-Testar
-Colocar no Docker Hub
-Colocar no GCRun
+**Pelo App no Google Cloud Run**
 
+Colocar link
 
 ## Base
 
-https://github.com/GoogleCloudPlatform/golang-samples/tree/main/run/helloworld
+[GCP Samples](https://github.com/GoogleCloudPlatform/golang-samples/tree/main/run/helloworld)
