@@ -2,7 +2,7 @@
 
 ## Proven skills:
 
-[Golang1](https://github.com/italo2sanfer/abwork/tree/main/golang1) ([Demo](https://github.com/italo2sanfer/abwork/edit/main/golang1/README.md#demonstration))
+[Golang1](https://github.com/italo2sanfer/abwork/tree/main/golang1) ([Demo](https://github.com/italo2sanfer/abwork/tree/main/golang1#demonstration))
 
 - IaC (Docker);
 - Golang; HTML; CSS;

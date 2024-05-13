@@ -1,9 +1,6 @@
-# ABWork - The work can't stop.
+# GoLang Project
 
-## Project portfolio
+Proven skills:
 
-Technologies of this project:
-
-- IaC
-- Terraform
-- GCP
+- IaC (Terraform)
+- Google Compute Engine (GCE)
