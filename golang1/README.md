@@ -1,28 +1,28 @@
 # GoLang Project
 
-Competências comprovadas neste projeto:
+Proven skills:
 
 - IaC (Docker);
 - Golang; HTML; CSS;
 - Google Cloud Run
 
-## Demonstração
+## Demonstration
 
-**Com docker**
+**Docker**
 
-> Instruções
-$ cd ~
-$ git clone https://github.com/italo2sanfer/abwork
-$ cd ~/abwork/golang1/
-$ docker build -f DockerfileDemo -t abwork-golang1:v1 .
-$ docker run --rm -p 8080:8080 abwork-golang1:v1
+> $ cd ~ && git clone https://github.com/italo2sanfer/abwork && \
+cd ~/abwork/golang1/ && docker build -f DockerfileDemo -t abwork-golang1:v1 . && \
+docker run --rm -p 8080:8080 abwork-golang1:v1
 
-Acesse http://localhost:8080/
 
-**Pelo App no Google Cloud Run**
+Access http://localhost:8080/
 
-Colocar link
+**App in Google Cloud Run**
+
+[Here](https://abwork-golang1-e27wdrgmda-uc.a.run.app)
 
 ## Base
 
 [GCP Samples](https://github.com/GoogleCloudPlatform/golang-samples/tree/main/run/helloworld)
+
+[Go samples](https://gowebexamples.com/forms/)
