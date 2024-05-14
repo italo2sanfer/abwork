@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  go:
+    build:
+      context: .
+      dockerfile: DockerfileDev
+    volumes:
+      - '.:/app/code'
+    stdin_open: true
+    tty: true

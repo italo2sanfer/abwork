@@ -10,9 +10,13 @@ Proven skills:
 
 **Docker**
 
-> $ cd ~ && git clone https://github.com/italo2sanfer/abwork && \
-cd ~/abwork/golang1/ && docker build -f DockerfileDemo -t abwork-golang1:v1 . && \
-docker run --rm -p 8080:8080 abwork-golang1:v1
+```
+$ cd ~
+$ git clone https://github.com/italo2sanfer/abwork
+$ cd ~/abwork/golang1/
+$ docker build -f DockerfileDemo -t abwork-golang1:v1 .
+$ docker run --rm -p 8080:8080 abwork-golang1:v1
+```
 
 
 Access http://localhost:8080/

@@ -1,4 +1,5 @@
-infinite-maxim-417114-f9d7b7b1a7b8.json
+key-terraform.json
 terraform.tfstate
 terraform.tfstate.backup
+.terraform*
 *.swp

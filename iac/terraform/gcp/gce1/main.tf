@@ -1,26 +1,26 @@
-# Configura o projeto GCP
+# Configures the project
 provider "google" {
-  credentials = "${file("infinite-maxim-417114-f9d7b7b1a7b8.json")}"
+  credentials = "${file("key-terraform.json")}"
   project     = "${var.project_id}"
-  region      = "${var.regiao}"
+  region      = "${var.region}"
 }
 
-# Cria a VM com o Google Compute Engine
+# Create a VM with Google Compute Engine
 resource "google_compute_instance" "webserver" {
-  name          = "${var.nome}"
-  machine_type  = "${var.tipo_maquina}"
-  zone          = "${var.zona}"
+  name          = "${var.name}"
+  machine_type  = "${var.machine_type}"
+  zone          = "${var.zone}"
 
   boot_disk {
     initialize_params {
-      image = "${var.imagem}"
+      image = "${var.image}"
     }
   }
 
-  # Instala o servidor web Apache
-  metadata_startup_script = "sudo apt-get update; sudo apt-get install apache2 -y; echo Testando > /var/www/html/index.html"
+  # Install Web Apache Server
+  metadata_startup_script = "sudo apt-get update; sudo apt-get install apache2 -y; echo 'Testing' > /var/www/html/index.html"
 
-  # Habilita rede para a VM bem como um IP público
+  # Able network VM and a public IP
   network_interface {
     network = "default"
     access_config {
@@ -29,14 +29,14 @@ resource "google_compute_instance" "webserver" {
   }
 }
 
-# Cria o Firewall para a VM
+# Create the Firewall for VM
 resource "google_compute_firewall" "webfirewall" {
-  name        = "${var.nome_fw}"
+  name        = "${var.fw_name}"
   network     = "default"
   source_tags = []
 
   allow {
     protocol  = "tcp"
-    ports     = "${var.portas}"
+    ports     = "${var.ports}"
   }
 }

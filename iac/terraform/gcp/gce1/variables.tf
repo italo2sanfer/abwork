@@ -1,39 +1,39 @@
 variable "project_id" {
   type    = string
-  default = "infinite-maxim-417114"
+  default = "<project_id_development> change here!"
 }
 
-variable "regiao" {
+variable "region" {
   type = string
   default = "us-west4"
 }
 
-variable "nome" {
+variable "name" {
   type = string
   default = "vm-webserver"
 }
 
-variable "tipo_maquina" {
+variable "machine_type" {
   type = string
   default = "f1-micro"
 }
 
-variable "zona" {
+variable "zone" {
   type = string
   default = "us-west4-a"
 }
 
-variable "imagem" {
+variable "image" {
   type = string
   default = "debian-cloud/debian-12"
 }
 
-variable "nome_fw" {
+variable "fw_name" {
   type = string
   default = "webserver-firewall"
 }
 
-variable "portas" {
+variable "ports" {
   type = list
   default = ["80"]
 }
