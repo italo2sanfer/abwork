@@ -24,19 +24,33 @@ import (
 	"os"
 )
 
+type Begin struct {
+	Success bool
+	LinkGithub string
+}
+
 type ContactDetails struct {
 	Success bool
     Name    string
     State   string
     Message string
+	LinkGithub string
 }
 
 func main() {
 	log.Print("starting server...")
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		tmpl := template.Must(template.ParseFiles("index.html"))
+		link_github := os.Getenv("LINK_GITHUB")
+		if link_github == "" {
+			link_github = "https://github.com/italo2sanfer/"
+		}
+		begin := Begin{
+			Success: false,
+			LinkGithub: link_github,
+		}		
 		if r.Method != http.MethodPost {
-			tmpl.Execute(w, nil)
+			tmpl.Execute(w, begin)
 			return
 		}
 		details := ContactDetails{
@@ -44,6 +58,7 @@ func main() {
 			Name:   r.FormValue("name"),
 			State: r.FormValue("state"),
 			Message: r.FormValue("message"),
+			LinkGithub: link_github,
 		}
 		tmpl.Execute(w, details)
 	})

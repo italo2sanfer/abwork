@@ -2,15 +2,30 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>A static page</title>
+	<title>ABWork Golang1</title>
 	<link rel="stylesheet" href="/static/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, max-scale=1.0">
 </head>
 <body>
     <div id="container">
         <div id="banner">
-            <a href="/">Home</a>
-            <h1>Golang</h1>
-            <p>Golang, Google Cloud Run, CSS</p>
+            <div id="banner-bar">
+                <div>
+                    <a href="/"><i class="fas fa-home"></i>&nbsp;Home&nbsp;</a>
+                    <a href="{{.LinkGithub}}" target="_blank"><i class="fas fa-code"></i>&nbsp;GitHub&nbsp;</a>
+                </div>
+                <div>
+                    <i class="fas fa-globe"></i>
+                    <a href="#">&nbsp;pt&nbsp;</a>
+                    <a href="#"><u>&nbsp;en&nbsp;</u></a>
+                    <a href="#">&nbsp;fr&nbsp;</a>
+                </div>
+            </div>
+            <div id="banner-logo">
+                <h1><a href="/">Golang</a></h1>
+                <p>Golang, Google Cloud Run, CSS</p>
+            </div>
         </div>
         <div id="demo">
             {{if .Success}}
@@ -42,6 +57,12 @@
                     <input type="submit">
                 </form>
             {{end}}
+        </div>
+        <div id="footer">
+            <div id="footer-credits">
+                <div><span class="fas fa-copyright" aria-hidden="true"></span>&nbsp;2024 Italo2sanfer&nbsp;</div>
+                <div><span class="fas fa-server" aria-hidden="true"></span>&nbsp;Google Cloud Run&nbsp;</div>
+            </div>
         </div>
     </div>
 </body>

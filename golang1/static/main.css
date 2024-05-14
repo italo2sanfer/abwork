@@ -12,13 +12,48 @@ body {
 #banner {
     padding: 1px 0 1px 0;
     background-color: rgb(51, 51, 95);
-    color:antiquewhite
-}
-
-#banner p { 
-    font-size:20px;
+    color:antiquewhite;
+    display: grid;
+    justify-items: center;
 }
 
 #banner a {
+    color:antiquewhite;
+    text-decoration: none;
+}
+
+#banner p {
+    font-size:20px;
+}
+
+#banner-bar {
+    width: 65%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#banner-logo, #banner-bar, #footer-credits {
+    width: 60%;
+}
+
+#footer {
+    background-color: rgb(98, 98, 136);
+    color:antiquewhite;
+    position: absolute;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+}
+
+#footer-credits {
+    position: absolute;
+    bottom: 0;    
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#banner.i, #footer.i {
     color:antiquewhite;
 }
