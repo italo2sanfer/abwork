@@ -10,4 +10,6 @@
 
 [GCE1](https://github.com/italo2sanfer/abwork/tree/main/iac/terraform/gcp/gce1)
 
-- IaC (Terraform); Google Compute Engine (GCE)
+- IaC (Docker);
+- IaC (Terraform);
+- Google Compute Engine (GCE)

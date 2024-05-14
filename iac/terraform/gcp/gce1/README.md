@@ -2,9 +2,9 @@
 
 Proven skills:
 
+- IaC (Docker)
 - IaC (Terraform)
 - Google Compute Engine (GCE)
-- IaC (Docker)
 
 ## Instructions
 
@@ -25,5 +25,6 @@ After choosing the project, fill in the project_id variable in varias.tf with th
 ```Passo 3 - Terraform
 $ terraform init
 $ terraform plan
-$ terraforma apply
+$ terraform apply
+$ terraform destroy
 ```
