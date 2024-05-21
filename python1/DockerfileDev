@@ -1,0 +1,26 @@
+# syntax=docker/dockerfile:1
+FROM python:latest
+
+RUN apt update
+RUN apt install -y vim less bash-completion
+
+## Com Pyenv Funcionando
+## Problema: Tem que rodar o requirements
+## manualmente ou no bashrc
+#RUN curl https://pyenv.run | bash
+#RUN echo "export PYENV_ROOT=\"\$HOME/.pyenv\"" >> ~/.bashrc
+#RUN echo "[[ -d \$PYENV_ROOT/bin ]] && export PATH=\"\$PYENV_ROOT/bin:\$PATH\"" >> ~/.bashrc
+#RUN echo "eval \"\$(pyenv init -)\"" >> ~/.bashrc
+#RUN echo "pyenv virtualenv app" >> ~/.bashrc
+#RUN echo "pyenv activate app" >> ~/.bashrc
+
+WORKDIR /app
+COPY ./requirements.txt requirements.txt
+RUN pip install --no-cache-dir --upgrade -r requirements.txt
+
+## O Docker-compose já está expondo as portas
+#EXPOSE 8080
+#EXPOSE 8000
+
+# Comando pra rodar automaticamente
+#CMD ["fastapi", "run", "app/main.py", "--port", "80"]
