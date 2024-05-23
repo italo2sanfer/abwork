@@ -1,6 +1,6 @@
 # GCE1 Project
 
-Proven skills:
+Automating the creation of a Google Cloud Engine (GCE) with a web server on Google Cloud Compute. Proven skills:
 
 - IaC (Docker)
 - IaC (Terraform)
@@ -8,11 +8,18 @@ Proven skills:
 
 ## Instructions
 
-```Passo 1
-$ gloud --version
+Up and down the infrastructure with docker-compose. You can enter in container and use the resources.
+
+```Basic usage
+$ docker-compose -f docker-compose-dev.yml up -d
+$ docker exec -it gce1_gce_1 bash
+$ docker-compose -f docker-compose-dev.yml down
 ```
 
-```Passo 2
+Handle gcloud.
+
+```
+$ gloud --version
 $ gcloud init
 ```
 
@@ -20,9 +27,9 @@ Follow the instructions and log in with your account using the token. Choose an 
 
 If you choose an existing project, it must have a terraform key created. If you want to create a new project, create a terraform key in it.
 
-After choosing the project, fill in the project_id variable in varias.tf with the information. Proceed with the terraform instructions.
+After choosing the project, fill in the project_id variable in variables.tf with the information. Proceed with the terraform instructions.
 
-```Passo 3 - Terraform
+```
 $ terraform init
 $ terraform plan
 $ terraform apply

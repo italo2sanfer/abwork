@@ -1,6 +1,6 @@
 # GoLang Project
 
-Proven skills:
+Submitting a simple form. Proven skills:
 
 - IaC (Docker);
 - Golang; HTML; CSS;
