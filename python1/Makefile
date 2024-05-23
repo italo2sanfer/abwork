@@ -1,4 +1,4 @@
-run_a1:
+run_a2:
 	@fastapi run api/main.py --port 8000
 
 run:
