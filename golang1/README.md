@@ -4,7 +4,6 @@ Submitting a simple form. Proven skills:
 
 - IaC (Docker);
 - Golang; HTML; CSS;
-- Google Cloud Run
 
 ## Demonstration
 
@@ -20,10 +19,6 @@ $ docker run --rm -p 8080:8080 abwork-golang1:v1
 
 
 Access http://localhost:8080/
-
-**App in Google Cloud Run**
-
-[Here](https://abwork-golang1-e27wdrgmda-uc.a.run.app)
 
 ## Base
 
